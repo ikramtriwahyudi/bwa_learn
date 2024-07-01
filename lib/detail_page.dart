@@ -11,8 +11,18 @@ class _Detail_pageState extends State<Detail_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [Text("Ini detail page")],
+      body: SafeArea(
+        bottom: false,
+        child: Stack(
+          children: [
+            Image.asset(
+              "assets/detail1.png",
+              width: MediaQuery.of(context).size.width,
+              height: 350,
+              fit: BoxFit.cover,
+            ),
+          ],
+        ),
       ),
     );
   }
