@@ -1,3 +1,8 @@
+import 'package:bwa_learn/homepage.dart';
+import 'package:bwa_learn/models/detail.dart';
+
+import 'package:bwa_learn/widgets/detail_card.dart';
+
 import 'package:flutter/material.dart';
 
 class Detail_page extends StatefulWidget {
@@ -28,7 +33,11 @@ class _Detail_pageState extends State<Detail_page> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ));
                     },
                     child: Image.asset(
                       "assets/btn_back.png",
@@ -48,7 +57,7 @@ class _Detail_pageState extends State<Detail_page> {
                   height: 328,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width,
+                  // width: MediaQuery.of(context).size.width,
                   height: 35,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.vertical(
@@ -111,10 +120,49 @@ class _Detail_pageState extends State<Detail_page> {
                                 height: 32,
                               ),
                               SizedBox(height: 8),
-                              Text("3 big lemari")
+                              Text("3 big lemari"),
                             ],
                           ),
                         ],
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      SizedBox(
+                        height: 88,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            DetailCard(
+                              detail:
+                                  Detail(id: 1, gambar: "assets/balado.png"),
+                            ),
+                            SizedBox(
+                              width: 18,
+                            ),
+                            DetailCard(
+                              detail:
+                                  Detail(id: 1, gambar: "assets/balado.png"),
+                            ),
+                            SizedBox(
+                              width: 18,
+                            ),
+                            DetailCard(
+                              detail:
+                                  Detail(id: 1, gambar: "assets/balado.png"),
+                            ),
+                            SizedBox(
+                              width: 18,
+                            ),
+                            DetailCard(
+                              detail:
+                                  Detail(id: 1, gambar: "assets/balado.png"),
+                            ),
+                            SizedBox(
+                              width: 18,
+                            ),
+                          ],
+                        ),
                       )
                     ],
                   ),
