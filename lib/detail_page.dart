@@ -23,7 +23,7 @@ class _Detail_pageState extends State<Detail_page> {
             Image.asset(
               "assets/detail1.png",
               width: MediaQuery.of(context).size.width,
-              height: 350,
+              height: 275,
               fit: BoxFit.cover,
             ),
             Padding(
@@ -162,6 +162,27 @@ class _Detail_pageState extends State<Detail_page> {
                               width: 18,
                             ),
                           ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Text(
+                        "Location",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Text("Jln. Kappan Sukses No. 20"),
+                      Text("Palembang"),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Center(
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text("Book Now"),
                         ),
                       )
                     ],
