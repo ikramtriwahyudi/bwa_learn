@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
+                SizedBox(
                   height: 150,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                             imageUrl: "assets/rendang.png",
                             isFavorit: false),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       CityCard(
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                             imageUrl: "assets/soto.png",
                             isFavorit: false),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       CityCard(
@@ -83,14 +83,14 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   "Recommended Menu",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SpaceCard(
@@ -98,12 +98,12 @@ class _HomePageState extends State<HomePage> {
                       id: 1,
                       image: "assets/coto.png",
                       nama: "Coto Megalodon",
-                      harga: "\$50",
+                      harga: "\50",
                       bulan: "/ 1 Baskom",
                       alamat: "Bisa",
                       kota: "Pay later"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SpaceCard(
@@ -111,12 +111,12 @@ class _HomePageState extends State<HomePage> {
                       id: 2,
                       image: "assets/balado.png",
                       nama: "Buaya Balado",
-                      harga: "\$60",
+                      harga: "\60",
                       bulan: "/ 1 Ember",
                       alamat: "Bisa",
                       kota: "Pay later"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SpaceCard(
@@ -124,19 +124,19 @@ class _HomePageState extends State<HomePage> {
                       id: 3,
                       image: "assets/oseng.png",
                       nama: "Oseng Trex",
-                      harga: "\$90",
+                      harga: "90",
                       bulan: "/ 1 Piring",
                       alamat: "Bisa",
                       kota: "Pay later"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   "Tips & Cara makan yang benar",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TipsCard(
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                       judul: "Pertanyaan",
                       update: "Update 16 Mei 2024"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TipsCard(
@@ -156,8 +156,8 @@ class _HomePageState extends State<HomePage> {
                       judul: "Pertanyaan",
                       update: "Update 16 Mei 2024"),
                 ),
-                SizedBox(
-                  height: 50,
+                const SizedBox(
+                  height: 70,
                 ),
               ],
             ),
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
           height: 65,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            color: Color(0xffF6F7F8),
+            color: const Color(0xffF6F7F8),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Row(

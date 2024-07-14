@@ -1,8 +1,6 @@
 import 'package:bwa_learn/detail_page.dart';
 import 'package:bwa_learn/models/space.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SpaceCard extends StatelessWidget {
   final Space space;
@@ -16,7 +14,7 @@ class SpaceCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Detail_page(),
+            builder: (context) => const Detail_page(),
           ),
         );
       },
@@ -30,7 +28,7 @@ class SpaceCard extends StatelessWidget {
                 color: const Color(0xffF6F7F8),
                 child: Image.asset(space.image)),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Column(
@@ -42,33 +40,30 @@ class SpaceCard extends StatelessWidget {
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Row(
-                children: [
-                  Text(space.harga),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(space.bulan),
-                ],
-              ),
-              SizedBox(
-                height: 20,
+              Text.rich(
+                TextSpan(
+                  text: "\$${space.harga}",
+                  style: TextStyle(fontSize: 16),
+                  children: [
+                    TextSpan(
+                      text: " / month",
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                ),
               ),
               Row(
                 children: [
                   Text(space.alamat),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Text(space.kota)
                 ],
-              )
+              ),
             ],
           )
         ],

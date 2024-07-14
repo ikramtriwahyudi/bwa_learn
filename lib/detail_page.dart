@@ -1,7 +1,4 @@
-import 'package:bwa_learn/homepage.dart';
-import 'package:bwa_learn/models/detail.dart';
-
-import 'package:bwa_learn/widgets/detail_card.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 
@@ -17,27 +14,22 @@ class _Detail_pageState extends State<Detail_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        bottom: false,
         child: Stack(
           children: [
             Image.asset(
               "assets/detail1.png",
               width: MediaQuery.of(context).size.width,
-              height: 275,
+              height: 350,
               fit: BoxFit.cover,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => HomePage(),
-                          ));
+                      Navigator.pop(context);
                     },
                     child: Image.asset(
                       "assets/btn_back.png",
@@ -53,141 +45,82 @@ class _Detail_pageState extends State<Detail_page> {
             ),
             ListView(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 328,
                 ),
                 Container(
-                  // width: MediaQuery.of(context).size.width,
-                  height: 35,
+                  width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(20),
                     ),
                     color: Colors.white,
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        "Kuretakeso Hott",
-                        style: TextStyle(fontSize: 22),
-                      ),
-                      Text("\$52 / month"),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text("Main Facilities"),
-                      SizedBox(
-                        height: 12,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                "assets/dtlicon1.png",
-                                width: 32,
-                                height: 32,
-                              ),
-                              SizedBox(height: 8),
-                              Text("2 kitchen")
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                "assets/dtlicon2.png",
-                                width: 32,
-                                height: 32,
-                              ),
-                              SizedBox(height: 8),
-                              Text("3 bedroom")
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                "assets/dtlicon3.png",
-                                width: 32,
-                                height: 32,
-                              ),
-                              SizedBox(height: 8),
-                              Text("3 big lemari"),
-                            ],
-                          ),
-                        ],
-                      ),
                       SizedBox(
                         height: 30,
                       ),
-                      SizedBox(
-                        height: 88,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            DetailCard(
-                              detail:
-                                  Detail(id: 1, gambar: "assets/balado.png"),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Kuretakeso Hott",
+                                  style: TextStyle(fontSize: 22),
+                                ),
+                                SizedBox(
+                                  height: 2,
+                                ),
+                                Text.rich(
+                                  TextSpan(
+                                    text: "\$52",
+                                    style: TextStyle(fontSize: 16),
+                                    children: [
+                                      TextSpan(
+                                        text: " / month",
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                            SizedBox(
-                              width: 18,
-                            ),
-                            DetailCard(
-                              detail:
-                                  Detail(id: 1, gambar: "assets/balado.png"),
-                            ),
-                            SizedBox(
-                              width: 18,
-                            ),
-                            DetailCard(
-                              detail:
-                                  Detail(id: 1, gambar: "assets/balado.png"),
-                            ),
-                            SizedBox(
-                              width: 18,
-                            ),
-                            DetailCard(
-                              detail:
-                                  Detail(id: 1, gambar: "assets/balado.png"),
-                            ),
-                            SizedBox(
-                              width: 18,
-                            ),
+                            Row(
+                              children: [
+                                Image.asset(
+                                  "assets/star.png",
+                                  width: 20,
+                                ),
+                                Image.asset(
+                                  "assets/star.png",
+                                  width: 20,
+                                ),
+                                Image.asset(
+                                  "assets/star.png",
+                                  width: 20,
+                                ),
+                                Image.asset(
+                                  "assets/star.png",
+                                  width: 20,
+                                ),
+                                Image.asset(
+                                  "assets/star.png",
+                                  width: 20,
+                                  color: Color(0xff989BA1),
+                                ),
+                              ],
+                            )
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Text(
-                        "Location",
-                        style: TextStyle(fontSize: 18),
-                      ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      Text("Jln. Kappan Sukses No. 20"),
-                      Text("Palembang"),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      Center(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text("Book Now"),
-                        ),
-                      )
                     ],
                   ),
-                ),
+                )
               ],
             ),
           ],

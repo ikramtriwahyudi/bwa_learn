@@ -10,12 +10,12 @@ class TipsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
+        SizedBox(
           width: 80,
           height: 80,
           child: Image.asset(tips.image),
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Column(
@@ -24,9 +24,9 @@ class TipsCard extends StatelessWidget {
           children: [
             Text(
               tips.judul,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Text(tips.update),
