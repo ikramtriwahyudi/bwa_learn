@@ -2,17 +2,31 @@ import 'package:bwa_learn/widgets/facility_item.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class Detail_page extends StatefulWidget {
+final Uri _url = Uri.parse(
+    'https://www.google.com/maps/search/teuku+umar+12/@-5.1124085,119.4325994,17z/data=!3m1!4b1?entry=ttu');
+
+final Uri _url1 = Uri.parse('tel://+62123456789');
+
+class Detail_page extends StatelessWidget {
   const Detail_page({super.key});
 
   @override
-  State<Detail_page> createState() => _Detail_pageState();
-}
-
-class _Detail_pageState extends State<Detail_page> {
-  @override
   Widget build(BuildContext context) {
+    Future<void> _launchUrl() async {
+      if (!await launchUrl(_url)) {
+        throw Exception('Could not launch $_url');
+      }
+    }
+
+    Future<void> _launchUrl1() async {
+      if (!await launchUrl(_url1)) {
+        throw Exception('Could not launch $_url');
+      }
+    }
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -210,9 +224,14 @@ class _Detail_pageState extends State<Detail_page> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("Jln. Kappan Sukses No. 20"),
-                                Image.asset(
-                                  "assets/location.png",
-                                  width: 40,
+                                GestureDetector(
+                                  onTap: () {
+                                    _launchUrl();
+                                  },
+                                  child: Image.asset(
+                                    "assets/location.png",
+                                    width: 40,
+                                  ),
                                 )
                               ],
                             ),
@@ -227,7 +246,9 @@ class _Detail_pageState extends State<Detail_page> {
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: Color(0xff5843BE)),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    _launchUrl1();
+                                  },
                                   child: Text(
                                     "Book Now",
                                     style: TextStyle(color: Colors.white),
