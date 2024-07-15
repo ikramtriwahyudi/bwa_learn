@@ -1,3 +1,4 @@
+import 'package:bwa_learn/widgets/facility_item.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
@@ -22,27 +23,6 @@ class _Detail_pageState extends State<Detail_page> {
               height: 350,
               fit: BoxFit.cover,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Image.asset(
-                      "assets/btn_back.png",
-                      width: 40,
-                    ),
-                  ),
-                  Image.asset(
-                    "assets/btn_wishlist.png",
-                    width: 40,
-                  ),
-                ],
-              ),
-            ),
             ListView(
               children: [
                 const SizedBox(
@@ -57,6 +37,7 @@ class _Detail_pageState extends State<Detail_page> {
                     color: Colors.white,
                   ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
                         height: 30,
@@ -114,14 +95,177 @@ class _Detail_pageState extends State<Detail_page> {
                                   color: Color(0xff989BA1),
                                 ),
                               ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Text(
+                          "Main Facilities",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Facility_item(
+                                imageUrl: "assets/dtlicon1.png",
+                                name: " Kitchen",
+                                number: 3),
+                            Facility_item(
+                                imageUrl: "assets/dtlicon2.png",
+                                name: " Bedroom",
+                                number: 2),
+                            Facility_item(
+                                imageUrl: "assets/dtlicon3.png",
+                                name: " Big Lemari",
+                                number: 3),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          "Photos",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Container(
+                          height: 88,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  "assets/jakarta.png",
+                                  width: 110,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  "assets/surabaya.png",
+                                  width: 110,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  "assets/oseng.png",
+                                  width: 110,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  "assets/rendang.png",
+                                  width: 110,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Location"),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("Jln. Kappan Sukses No. 20"),
+                                Image.asset(
+                                  "assets/location.png",
+                                  width: 40,
+                                )
+                              ],
+                            ),
+                            Text("Palembang"),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Center(
+                              child: Container(
+                                height: 50,
+                                width: 327,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: Color(0xff5843BE)),
+                                  onPressed: () {},
+                                  child: Text(
+                                    "Book Now",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 40,
                             )
                           ],
                         ),
                       ),
                     ],
                   ),
-                )
+                ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      "assets/btn_back.png",
+                      width: 40,
+                    ),
+                  ),
+                  Image.asset(
+                    "assets/btn_wishlist.png",
+                    width: 40,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
